@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 export default class Login extends Component {
   render() {
     return (
-      <form>
+      <div className='App'>
+        <div className='auth-wrapper'>
+          <div className='auth-inner'>
+          <form>
         <h3>Sign In</h3>
         <div className="mb-3">
           <label>Email address</label>
@@ -41,6 +44,11 @@ export default class Login extends Component {
           Forgot <a href="#">password?</a>
         </p>
       </form>
+          </div>
+
+        </div>
+      </div>
+      
     )
   }
 }
