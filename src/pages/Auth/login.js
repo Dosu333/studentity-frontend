@@ -1,7 +1,9 @@
 import React from "react";
 import "./auth.css";
+import { Link, useNavigate } from "react-router-dom";
 
-const login = () => {
+const Login = () => {
+  const navigate = useNavigate();
   return (
     <>
       {" "}
@@ -9,6 +11,17 @@ const login = () => {
         <div class="authentication-wrapper authentication-basic container-p-y">
           <div class="authentication-inner">
             {/* <!-- Login --> */}
+            <span
+              onClick={() => navigate(-1)}
+              style={{
+                padding: "10px 0",
+                fontSize: "13px",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              <i class="bx bx-arrow-back"></i> Go back
+            </span>
             <div class="card">
               <div class="card-body">
                 {/* <!-- Logo --> */}
@@ -125,9 +138,10 @@ const login = () => {
                       <label class="form-label" for="password">
                         Password
                       </label>
-                      <a href="auth-forgot-password-basic.html">
+                      <Link to={"/reset-password"}>
+                        {" "}
                         <small>Forgot Password?</small>
-                      </a>
+                      </Link>
                     </div>
                     <div class="input-group input-group-merge">
                       <input
@@ -165,9 +179,10 @@ const login = () => {
 
                 <p class="text-center">
                   <span>New on our platform?</span>
-                  <a href="auth-register-basic.html">
+                  <Link to={"/register"}>
+                    {" "}
                     <span>Create an account</span>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -179,4 +194,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

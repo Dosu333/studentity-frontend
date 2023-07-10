@@ -3,10 +3,10 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import SignUp from "./components/signup";
-
 import FixedBottomNavigation from "./components/navigation";
 import Login from "./pages/Auth/login";
+import ForgotPass from "./pages/Auth/forgotpass";
+import SignUp from "./pages/Auth/signup";
 
 function App() {
   return (
@@ -39,8 +39,9 @@ function App() {
         {/* <div className="auth-inner"> */}
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route path="/sign-in" element={<Login />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<SignUp />} />
+          <Route path="/reset-password" element={<ForgotPass />} />
           <Route path="/home" element={<FixedBottomNavigation />} />
         </Routes>
         {/* </div> */}
