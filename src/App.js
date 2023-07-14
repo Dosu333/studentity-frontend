@@ -7,6 +7,8 @@ import FixedBottomNavigation from "./components/navigation";
 import Login from "./pages/Auth/login";
 import ForgotPass from "./pages/Auth/forgotpass";
 import SignUp from "./pages/Auth/signup";
+import Dashboard from "./pages/Dashboard";
+
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       {/* <h1 className='float-left container'>Studentity</h1> */}
       {/* <h1 className='float-right'>Login</h1> */}
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+        {/* <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
           <div className="container">
             <Link className="navbar-brand" to={"/sign-in"}>
               Studentity
@@ -34,14 +36,15 @@ function App() {
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
         {/* <div className="auth-wrapper"> */}
         {/* <div className="auth-inner"> */}
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/reset-password" element={<ForgotPass />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/home" element={<FixedBottomNavigation />} />
         </Routes>
         {/* </div> */}

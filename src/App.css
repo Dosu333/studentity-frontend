@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 :root {
   --bs-blue: #007bff;
   --bs-indigo: #6610f2;
@@ -15691,6 +15692,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .content-wrapper > *,
 .layout-menu {
   min-height: 1px;
+  height: 100vh;
 }
 
 .layout-navbar,

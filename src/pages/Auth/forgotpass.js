@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 const ForgotPass = () => {
   return (
     <>
-      <div class="container-xxl">
-        <div class="authentication-wrapper authentication-basic container-p-y">
-          <div class="authentication-inner py-4">
+      <div className="container-xxl">
+        <div className="authentication-wrapper authentication-basic container-p-y">
+          <div className="authentication-inner py-4">
             {/* <!-- Forgot Password --> */}
-            <div class="card">
-              <div class="card-body">
+            <div className="card">
+              <div className="card-body">
                 {/* <!-- Logo --> */}
-                <div class="app-brand justify-content-center">
-                  <a href="index.html" class="app-brand-link gap-2">
-                    <span class="app-brand-logo demo">
+                <div className="app-brand justify-content-center">
+                  <a href="index.html" className="app-brand-link gap-2">
+                    <span className="app-brand-logo demo">
                       <svg
                         width="25"
                         viewBox="0 0 25 42"
@@ -94,43 +94,43 @@ const ForgotPass = () => {
                         </g>
                       </svg>
                     </span>
-                    <span class="app-brand-text demo text-body fw-bolder">
+                    <span className="app-brand-text demo text-body fw-bolder">
                       Studentity
                     </span>
                   </a>
                 </div>
                 {/* <!-- /Logo --> */}
-                <h4 class="mb-2">Forgot Password? 🔒</h4>
-                <p class="mb-4">
+                <h4 className="mb-2">Forgot Password? 🔒</h4>
+                <p className="mb-4">
                   Enter your email and we'll send you instructions to reset your
                   password
                 </p>
                 <form
                   id="formAuthentication"
-                  class="mb-3"
+                  className="mb-3"
                   action="index.html"
                   method="POST"
                 >
-                  <div class="mb-3">
-                    <label for="email" class="form-label">
+                  <div className="mb-3">
+                    <label for="email" className="form-label">
                       Email
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       name="email"
                       placeholder="Enter your email"
                       autofocus
                     />
                   </div>
-                  <button class="btn btn-primary d-grid w-100">
+                  <button className="btn btn-primary d-grid w-100">
                     Send Reset Link
                   </button>
                 </form>
-                <div class="text-center">
+                <div className="text-center">
                   <Link to={"/login"}>
-                    <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                    <i className="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                     Back to login
                   </Link>
                 </div>
