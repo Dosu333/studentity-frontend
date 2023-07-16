@@ -1,27 +1,28 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Bottomnav = () => {
   return (
     <>
       <div className="dem bottom-nav">
-        <ul className="bnav-inner">
-          <li className="bnav-item">
+        <div className="bnav-inner">
+          <NavLink className="bnav-item" to={"/"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
             <span>Dashboard</span>
-          </li>
-          <li className="bnav-item">
+          </NavLink>
+          <NavLink className="bnav-item" to={"/dashboard"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Layouts</span>
-          </li>
-          <li className="bnav-item">
+            <span>Dashboard</span>
+          </NavLink>
+          <NavLink className="bnav-item" to={"/login"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Jobs</span>
-          </li>
-          <li className="bnav-item">
+            <span>Dashboard</span>
+          </NavLink>
+          <NavLink className="bnav-item" to={"/me"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Me</span>
-          </li>
-        </ul>
+            <span>Dashboard</span>
+          </NavLink>
+        </div>
       </div>
     </>
   );
