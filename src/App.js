@@ -8,48 +8,33 @@ import Login from "./pages/Auth/login";
 import ForgotPass from "./pages/Auth/forgotpass";
 import SignUp from "./pages/Auth/signup";
 import Dashboard from "./pages/Dashboard";
-
+import Sidebar from "./components/Sidebar";
+import Topnav from "./components/Topnav";
+import Bottomnav from "./components/Bottomnav";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
     <Router>
-      {/* <h1 className='float-left container'>Studentity</h1> */}
-      {/* <h1 className='float-right'>Login</h1> */}
-      <div className="App">
-        {/* <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
-          <div className="container">
-            <Link className="navbar-brand" to={"/sign-in"}>
-              Studentity
-            </Link>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-in"}>
-                    Login
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-up"}>
-                    Sign up
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> */}
-        {/* <div className="auth-wrapper"> */}
-        {/* <div className="auth-inner"> */}
-        <Routes>
-          <Route exact path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<SignUp />} />
-          <Route path="/reset-password" element={<ForgotPass />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/home" element={<FixedBottomNavigation />} />
-        </Routes>
-        {/* </div> */}
-        {/* </div> */}
+      <div className="layout-container layout-menu-fixed">
+        <Sidebar />
+        <div className="layout-page">
+          <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme navbar-detached navbar-expand-xl navbar ">
+            <Topnav />
+          </nav>
+          <div className="content-wrapper">
+            <Routes>
+              <Route exact path="/" element={<Dashboard />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<SignUp />} />
+              <Route path="/reset-password" element={<ForgotPass />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/chat" element={<Chat />} />
+            </Routes>
+          </div>{" "}
+        </div>
       </div>
+      <Bottomnav />
     </Router>
   );
 }

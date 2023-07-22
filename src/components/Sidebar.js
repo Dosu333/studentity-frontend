@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -101,32 +102,32 @@ const Sidebar = () => {
 
         <ul className="menu-inner py-1">
           {/* <!-- Dashboard --> */}
-          <li className="menu-item active">
-            <a href="index.html" className="menu-link">
+          <NavLink to={"/"} className="menu-item">
+            <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
-            </a>
-          </li>
-          <li className="menu-item">
-            <a href="javascript:void(0);" className="menu-link">
+            </li>
+          </NavLink>
+          <NavLink to={"/dashboard"} className="menu-item">
+            <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-layout"></i>
               <div data-i18n="Layouts">Layouts</div>
-            </a>
-          </li>
+            </li>
+          </NavLink>
 
-          <li className="menu-item">
-            <a href="javascript:void(0);" className="menu-link">
+          <NavLink to={"/chat"} className="menu-item">
+            <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-layout"></i>
-              <div data-i18n="Layouts">Layouts</div>
-            </a>
-          </li>
+              <div data-i18n="Layouts">Resume</div>
+            </li>
+          </NavLink>
 
-          <li className="menu-item">
-            <a href="javascript:void(0);" className="menu-link">
+          <NavLink to={"/me"} className="menu-item">
+            <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-layout"></i>
               <div data-i18n="Layouts">Layouts</div>
-            </a>
-          </li>
+            </li>
+          </NavLink>
         </ul>
       </aside>
 
