@@ -1,5 +1,7 @@
 import { red } from "@mui/material/colors";
 import React, { useEffect, useRef, useState } from "react";
+import avatar from "../../components/7.png";
+import pdficon from "../../components/pdf-icon.png"
 
 
 
@@ -18,7 +20,7 @@ const Profile = () => {
                 <div className="card">
                     <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150"/>
+                        <img src={avatar} alt="Admin" className="rounded-circle" width="150"/>
                         <div className="mt-3">
                         <h4>John Doe</h4>
                         </div>
@@ -37,7 +39,7 @@ const Profile = () => {
                     <h4>Resume</h4>
                     <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <a className="d-flex align-items-center" href="sample.pdf" target="_blank" style={{padding: "4px"}}><img src="https://recursos-moodle.caeddigital.net/projetos/img-cursos/av/dowload-pdf.png" style={{maxWidth: "10%", marginRight: "12px"}} />
+                        <a className="d-flex align-items-center" href="sample.pdf" target="_blank" style={{padding: "4px"}}><img src={pdficon} style={{maxWidth: "10%", marginRight: "12px"}} />
                         <p className="text-left" style={{marginBottom: "0px"}}><em className>View resume</em><br /></p>
                         </a>
                     </li>
