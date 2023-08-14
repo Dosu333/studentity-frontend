@@ -35,34 +35,37 @@ const Profile = () => {
 
                 </div>
                 <div className="card mt-3">
-                    <h1>Qualifications</h1>
-                    <h4>Resume</h4>
-                    <ul className="list-group list-group-flush">
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <a className="d-flex align-items-center" href="sample.pdf" target="_blank" style={{padding: "4px"}}><img src={pdficon} style={{maxWidth: "10%", marginRight: "12px"}} />
-                        <p className="text-left" style={{marginBottom: "0px"}}><em className>View resume</em><br /></p>
-                        </a>
-                    </li>
-                    </ul>
-                    <h4>links</h4>
-                    <ul className="list-group list-group-flush">
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span className="text-secondary">https://website.com</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span className="text-secondary">https://website.com</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span className="text-secondary">https://website.com</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span className="text-secondary">https://website.com</span>
-                    </li>
-                    <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span className="text-secondary">https://website.com</span>
-                    </li>
-                    </ul>
-                    <button className="btn btn-info mt-2" type="submit">Add link</button>
+                    <div className="card-body">
+                        <h1>Qualifications</h1>
+                        <h4>Resume</h4>
+                        <ul className="list-group list-group-flush">
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <a className="d-flex align-items-center" href="sample.pdf" target="_blank" style={{padding: "4px"}}><img src={pdficon} style={{maxWidth: "10%", marginRight: "12px"}} />
+                            <p className="text-left" style={{marginBottom: "0px"}}><em className>View resume</em><br /></p>
+                            </a>
+                        </li>
+                        </ul>
+                        <h4>links</h4>
+                        <ul className="list-group list-group-flush">
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <span className="text-secondary">https://website.com</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <span className="text-secondary">https://website.com</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <span className="text-secondary">https://website.com</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <span className="text-secondary">https://website.com</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <span className="text-secondary">https://website.com</span>
+                        </li>
+                        </ul>
+                        <button className="btn btn-info mt-2" type="submit">Add link</button>
+                    </div>
+                    
                 </div>
                 </div>
                 <div className="col-md-8">
