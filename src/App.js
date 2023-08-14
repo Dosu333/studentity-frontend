@@ -12,6 +12,7 @@ import Sidebar from "./components/Sidebar";
 import Topnav from "./components/Topnav";
 import Bottomnav from "./components/Bottomnav";
 import Chat from "./pages/Chat";
+import Profile from "./pages/profile/profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/reset-password" element={<ForgotPass />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </div>{" "}
         </div>

@@ -65,9 +65,13 @@ const Chat = () => {
           {
             messages.map((message, i) => (
               <div className={message.sender === "AI" ? "chatLeft" : "chatRight"} style={i===messages.length-1?{marginBottom: "200px"}:null}>
+                 {
+                  message.sender==="AI"?
                   <div className="image">
-                    <img src={message.sender==="AI"?avatar2:null} alt="" className="img-avatar" />
-                  </div>
+                  <img src={avatar2} alt="" className="img-avatar" />
+                  </div>:null
+                 }
+                  
                 <div className={message.sender === "AI" ? "aBody" : "uBody"}>
                   <div className={message.sender === "AI" ? "aContent" : "uContent"}>
                     <div> { isTyping && i === messages.length - 1 && message.sender==="AI" ? <Typing /> : message.message } </div>                  
@@ -76,9 +80,15 @@ const Chat = () => {
                     <i className={message.sender==="AI" ? "tf-icons bx bx-calendar":" bx bx-calendar"}></i> 22-07-2023 at 09:00
                   </small>
                 </div>
-                <div className="image">
-                  <img src={message.sender === "user" ? avatar : null} alt="" className="img-avatar" />
-                </div>
+                
+                 {
+                  message.sender === "user" ?
+                 <div className="image">
+                    <img src={avatar} alt="" className="img-avatar" />
+                  </div>: null
+                  }
+                
+
               </div>
             ))
           }
