@@ -62,6 +62,7 @@ const Profile = () => {
                         <span className="text-secondary">https://website.com</span>
                     </li>
                     </ul>
+                    <button className="btn btn-info mt-2" type="submit">Add link</button>
                 </div>
                 </div>
                 <div className="col-md-8">
