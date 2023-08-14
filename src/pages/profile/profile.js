@@ -75,7 +75,7 @@ const Profile = () => {
                         <div className="form-group"><label className="text-secondary">Old Password</label><input className="form-control" type="password" required /></div>
                         <div className="form-group"><label className="text-secondary">New Password</label><input className="form-control" type="password" required /></div>
                         <div className="form-group"><label className="text-secondary">Confirm New Password</label><input className="form-control" type="password" required /></div>
-                        <button className="btn btn-info mt-2" type="submit">Log In</button>
+                        <button className="btn btn-info mt-2" type="submit">Change Password</button>
                     </form>
                     </div>
 
