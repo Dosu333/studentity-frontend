@@ -28,10 +28,13 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className="card mt-3">
-                    <h5>Pitch</h5>
-                    <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum veniam deleniti debitis facilis neque praesentium doloremque deserunt, vel quisquam delectus harum quidem, repudiandae inventore? Ut doloribus aliquid incidunt totam atque.
-                    </p>
+                    <div className="card-body">
+                        <h5>Pitch</h5>
+                        <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum veniam deleniti debitis facilis neque praesentium doloremque deserunt, vel quisquam delectus harum quidem, repudiandae inventore? Ut doloribus aliquid incidunt totam atque.
+                        </p>
+                    </div>
+                    
 
                 </div>
                 <div className="card mt-3">
