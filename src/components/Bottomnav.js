@@ -10,9 +10,9 @@ const Bottomnav = () => {
             <i className="bnav-icon tf-icons bx bx-layout"></i>
             <span>Dashboard</span>
           </NavLink>
-          <NavLink className="bnav-item" to={"/dashboard"}>
+          <NavLink className="bnav-item" to={"/opportunities"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Dashboard</span>
+            <span>Opportunities</span>
           </NavLink>
           <NavLink className="bnav-item" to={"/chat"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
