@@ -1,5 +1,7 @@
-import "./css/styles.css"
-const Opportunities = ()=>{
+import { useParams } from "react-router-dom";
+
+const Post = ()=>{
+    let id = useParams().id
     
     const opportunities = [
         {
@@ -31,45 +33,35 @@ const Opportunities = ()=>{
             date: "October 28, 2023"
         }
     ]
-
     return (
-        <>
-       
-    <body>
         
-        {/* <!-- Main Content--> */}
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    {/* <!-- Post preview--> */}
-
-                    {opportunities.map((opportunity, index)=>(
-                        <div class="post-preview">
-                        <a href={opportunity.link+ "/"+opportunity.id}>
-                            <h1 class="post-title">{opportunity.title}</h1>
-                            <p class="post-subtitle">{opportunity.post.slice(0, 200)+"..."}</p>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a style={{padding: "10px"}} href={opportunity["company-link"]}>{opportunity.company}</a>
-                            on {opportunity.date}
-                        </p>
+        <body>
+        
+        <header class="masthead" style={{backgroundImage: "url(assets/img/post-bg.jpg)"}}>
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{opportunities[id].title}</h1>
+                        </div>
                     </div>
-                    ))}
-                    
-                    {/* <!-- Divider--> */}
-                    <hr class="my-4" />
-                
-                    {/* <!-- Pager--> */}
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
                 </div>
             </div>
-        </div>
+        </header>
+
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        {opportunities[id].post}
+                    </div>
+                </div>
+            </div>
+        </article>
         
         <script src="js/scripts.js"></script>
     </body>
-        </>
     )
 }
 
-export default Opportunities
+export default Post;

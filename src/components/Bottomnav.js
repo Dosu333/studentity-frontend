@@ -12,7 +12,7 @@ const Bottomnav = () => {
           </NavLink>
           <NavLink className="bnav-item" to={"/opportunities"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Opportunities</span>
+            <span>Events</span>
           </NavLink>
           <NavLink className="bnav-item" to={"/chat"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>

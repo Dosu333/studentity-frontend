@@ -10669,11 +10669,11 @@ footer {
 
 header.masthead {
   position: relative;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: no-repeat center center;
-  background-color: #6c757d;
+  background-color: white;
   background-size: cover;
   background-attachment: scroll;
 }
@@ -10684,7 +10684,6 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #212529;
   opacity: 0.5;
 }
 header.masthead .page-heading,
@@ -10731,12 +10730,12 @@ header.masthead .post-heading .meta {
   font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .post-heading .meta a {
-  color: #fff;
+  
 }
 @media (min-width: 992px) {
   header.masthead {
     padding-top: 12.5rem;
-    padding-bottom: 12.5rem;
+    padding-bottom: 2.5rem;
   }
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
