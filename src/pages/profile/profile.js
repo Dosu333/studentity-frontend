@@ -12,6 +12,9 @@ const Profile = () => {
     const [pitch, setPitch] = useState("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum veniam deleniti debitis facilis neque praesentium doloremque deserunt, vel quisquam delectus harum quidem, repudiandae inventore? Ut doloribus aliquid incidunt totam atque.")
     const [editPitch, setEditPitch] = useState(false)
     const [editName, setEditName] = useState(false)
+    const [editLink, setEditLink] = useState()
+    const [editIndex, setEditIndex] = useState()
+    
     function handleAddLink(){
         links.push(link)
         setLinks(links)
@@ -32,6 +35,29 @@ const Profile = () => {
             setEditName(false)
         }
     }
+
+   
+
+    function handleEditLinks(index){
+        setEditIndex(index)
+    }
+    
+
+    function handleUpdateLink(value, index){
+        setEditIndex(index)
+        const updatedList = [...links]
+        if (value){
+            updatedList[index] = value;
+        }
+        
+        setLinks(updatedList)
+        if (!value){
+            setEditIndex("")
+        }
+        
+
+    }
+
     return (
         <div className="container">
             <div className="main-body">
@@ -86,12 +112,38 @@ const Profile = () => {
                                 </ul>
                                 <h4>links</h4>
                                 <ul className="list-group list-group-flush">
-                                    { links.map((link, index)=>(
-                                            <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                                <span className="text-secondary">{link}</span>
-                                            </li>
-                                        ))
-                                    }
+                                {links.map((link, index) => (
+                                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap" key={index}>
+                                    {editIndex !== index ? (
+                                    <span className="text-secondary">{link}</span>
+                                    ) : (
+                                    <div className="input-group">
+                                        <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="input link"
+                                        value={links[index]}
+                                        onChange={(e) => handleUpdateLink(e.target.value, index)}
+                                        />
+                                        <button
+                                        onClick={() => handleUpdateLink(null, index)}
+                                        className="btn btn-info"
+                                        type="button"
+                                        >
+                                        <i className="bx bx-check"></i>
+                                        </button>
+                                    </div>
+                                    )}
+                                    {editIndex !== index ? (
+                                    <i
+                                        className="bx bx-pen"
+                                        onClick={() => handleEditLinks(index)}
+                                        style={{ marginLeft: "20px" }}
+                                    ></i>
+                                    ) : null}
+                                </li>
+                                ))}
+
                                     <div className="input-group">
                                         <input type="text" className="form-control" placeholder="input link" value={link} onChange={(e) => setLink(e.target.value)}/>    
                                         <div className="input-group-prepend">
