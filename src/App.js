@@ -15,6 +15,7 @@ import Chat from "./pages/Chat";
 import Profile from "./pages/profile/profile";
 import Opportunities from "./pages/opportunities/opportunities";
 import Post from "./pages/opportunities/post";
+import Shoot from "./pages/shootshot/shoot";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/opportunities" element={<Opportunities/>}/>
               <Route path="/post/:id" element={<Post />} />
+              <Route path="/shoot" element={<Shoot/>} />
             </Routes>
           </div>{" "}
         </div>

@@ -18,9 +18,9 @@ const Bottomnav = () => {
             <i className="bnav-icon tf-icons bx bx-layout"></i>
             <span>Resume</span>
           </NavLink>
-          <NavLink className="bnav-item" to={"/me"}>
+          <NavLink className="bnav-item" to={"/shoot"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
-            <span>Dashboard</span>
+            <span>Pitch</span>
           </NavLink>
         </div>
       </div>

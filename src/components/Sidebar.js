@@ -41,10 +41,10 @@ const Sidebar = () => {
             </li>
           </NavLink>
 
-          <NavLink to={"/me"} className="menu-item">
+          <NavLink to={"/shoot"} className="menu-item">
             <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-layout"></i>
-              <div data-i18n="Layouts">Layouts</div>
+              <div data-i18n="Layouts">Pitch</div>
             </li>
           </NavLink>
         </ul>

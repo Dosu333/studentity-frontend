@@ -48,8 +48,6 @@ const Chat = () => {
       sender: "AI"
     })
     setMessage(messages)
-    
-
   }
   return (
     <div
@@ -58,7 +56,7 @@ const Chat = () => {
     >
        
       
-      <div class="card-body chatB">
+       <div class="card-body chatB">
         <div className="chatInside">
           {/* chats Start  */}
           
