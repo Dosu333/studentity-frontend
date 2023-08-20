@@ -60,13 +60,14 @@ const Shoot = () => {
         <div class="row">
             <div class="col-lg-4 col-xl-4">
                 <div class="row">
-                    <div class="col d-flex flex-nowrap justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center py-2" style={{backgroundColor: "rgba(52,58,64,0.2)",height: "4rem"}}>
-                        <h5 class="mr-auto my-auto">Shoot your shot</h5><button class="btn shadow-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem;"}}><i class="far fa-comment-alt"></i></button>
-                    </div>
+                    
                 </div>
+                <div class="col d-flex flex-nowrap justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center py-2" style={{backgroundColor: "white",height: "4rem", marginLeft: "2.5rem"}}>
+                        <h6 class="mr-auto my-auto align-items-center">Shoot your shot</h6><button class="btn shadow-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem;"}}></button>
+                    </div>
                 <div class="row px-3 py-2">
                     <div class="col" style={{borderRadius: "25px",boxShadow: "0px 0px 5px var(--gray-dark)"}}>
-                        <form class="d-flex align-items-center px-2"><i class="bx bx-search"></i><input class="shadow-none form-control flex-shrink-1" type="search" placeholder="Busca un chat o inicia uno nuevo" style={{borderRadius: "13px", borderStyle: "none"}}></input></form>
+                        <form class="d-flex align-items-center px-2"><i class="bx bx-search"></i><input class="shadow-none form-control flex-shrink-1" type="search" placeholder="Search companies" style={{borderRadius: "13px", borderStyle: "none"}}></input></form>
                     </div>
                 </div>
                 <div class="row">
@@ -75,7 +76,7 @@ const Shoot = () => {
                             <li style={{cursor:"pointer"}}>
                                 <div class="card border-0">
                                     <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem",borderRadius: "15px",backgroundColor: "#00db5f"}}>1</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Ximena Samano</h4>
+                                        <h4 class="text-nowrap text-truncate card-title">Microsoft</h4>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
                                     </div>
@@ -84,7 +85,7 @@ const Shoot = () => {
                             <li style={{cursor:"pointer"}}>
                                 <div class="card border-0">
                                     <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem",borderRadius: "15px",backgroundColor: "#00db5f"}}>1</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Gibran Ojeda</h4>
+                                        <h4 class="text-nowrap text-truncate card-title">Google</h4>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Boke, GB, Boke!</h6>
                                     </div>
@@ -93,7 +94,7 @@ const Shoot = () => {
                             <li style={{cursor:"pointer"}}>
                                 <div class="card border-0">
                                     <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem", borderRadius: "15px",background: "#00db5f"}}>10</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Rebeca H.</h4>
+                                        <h4 class="text-nowrap text-truncate card-title">Facebook</h4>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
                                     </div>
@@ -102,7 +103,7 @@ const Shoot = () => {
                             <li style={{cursor:"pointer"}}>
                                 <div class="card border-0">
                                     <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem", height: "2rem",borderRadius: "15px",background: "#00db5f"}}>5</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Laura D.</h4>
+                                        <h4 class="text-nowrap text-truncate card-title">Amazon</h4>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
                                         <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
                                     </div>
@@ -115,7 +116,7 @@ const Shoot = () => {
             <div class="col d-none d-sm-none d-md-none d-lg-block d-xl-block">
                 <div class="row">
                     <div class="col d-flex align-items-lg-center align-items-xl-center border-start border-muted" style={{backgroundColor: "rgba(52,58,64,0.2)",height: "4rem"}}><button class="btn d-block d-sm-block d-md-block d-lg-none d-xl-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem"}}><i class="far fa-arrow-alt-circle-left"></i></button>
-                        <h5 class="mr-auto my-auto">Ximena Samano</h5><span class="my-auto"><i class="fas fa-info-circle"></i></span>
+                        <h5 class="mr-auto my-auto">Google</h5><span class="my-auto"><i class="fas fa-info-circle"></i></span>
                     </div>
                     <div class="card-body chatB">
         <div className="chatInside">

@@ -29,14 +29,14 @@ const Sidebar = () => {
           </NavLink>
           <NavLink to={"/opportunities"} className="menu-item">
             <li className="menu-link">
-              <i className="menu-icon tf-icons bx bx-layout"></i>
+              <i className="menu-icon tf-icons bx bx-calendar-event"></i>
               <div data-i18n="Layouts">Events</div>
             </li>
           </NavLink>
 
           <NavLink to={"/chat"} className="menu-item">
             <li className="menu-link">
-              <i className="menu-icon tf-icons bx bx-layout"></i>
+              <i className="menu-icon tf-icons bx bx-file"></i>
               <div data-i18n="Layouts">Resume</div>
             </li>
           </NavLink>
