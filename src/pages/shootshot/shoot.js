@@ -62,8 +62,8 @@ const Shoot = () => {
                 <div class="row">
                     
                 </div>
-                <div class="col d-flex flex-nowrap justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center py-2" style={{backgroundColor: "white",height: "4rem", marginLeft: "2.5rem"}}>
-                        <h6 class="mr-auto my-auto align-items-center">Shoot your shot</h6><button class="btn shadow-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem;"}}></button>
+                <div class="col d-flex flex-nowrap justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center py-2" style={{backgroundColor: "white",height: "4rem", marginLeft: "1.5rem"}}>
+                        <h4 class="mr-auto my-auto align-items-center">Shoot your shot</h4><button class="btn shadow-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem;"}}></button>
                     </div>
                 <div class="row px-3 py-2">
                     <div class="col" style={{borderRadius: "25px",boxShadow: "0px 0px 5px var(--gray-dark)"}}>
