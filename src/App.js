@@ -16,6 +16,7 @@ import Profile from "./pages/profile/profile";
 import Opportunities from "./pages/opportunities/opportunities";
 import Post from "./pages/opportunities/post";
 import Shoot from "./pages/shootshot/shoot";
+import Pitchdm from "./pages/shootshot/pitchchat";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Route path="/opportunities" element={<Opportunities/>}/>
               <Route path="/post/:id" element={<Post />} />
               <Route path="/shoot" element={<Shoot/>} />
+              <Route path="/pitchdm" element={<Pitchdm/>} />
             </Routes>
           </div>{" "}
         </div>
