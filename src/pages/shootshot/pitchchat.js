@@ -99,7 +99,7 @@ const Pitchdm = () => {
         </div>
         
         {/* SendArea  */}
-        <div class=" byr">
+        <div class=" byr" style={{marginBottom:"25px"}}>
           <div className="add">
             <button
               type="button"
