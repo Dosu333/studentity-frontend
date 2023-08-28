@@ -38,12 +38,13 @@ function App() {
     }
     
     window.addEventListener("scroll", handleScroll)
+    window.addEventListener("touch")
   }, [])
 
   useEffect(()=>{
     console.log(scrollData)
 
-    if (scrollData.y > 200){
+    if (scrollData.y < 200){
       setShowNav(true)
     }else{
       setShowNav(false)
