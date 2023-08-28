@@ -45,9 +45,9 @@ function App() {
           </div>{" "}
         </div>
       </div>
-      <Headroom>
+      {/* <Headroom> */}
         <Bottomnav />
-      </Headroom>
+      {/* </Headroom> */}
       
     </Router>
   );
