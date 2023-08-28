@@ -38,7 +38,7 @@ function App() {
     }
     
     window.addEventListener("scroll", handleScroll)
-    window.addEventListener("touch")
+    // window.addEventListener("touch")
   }, [])
 
   useEffect(()=>{
