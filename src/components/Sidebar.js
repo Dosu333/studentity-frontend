@@ -30,7 +30,7 @@ const Sidebar = () => {
           <NavLink to={"/opportunities"} className="menu-item">
             <li className="menu-link">
               <i className="menu-icon tf-icons bx bx-calendar-event"></i>
-              <div data-i18n="Layouts">Events</div>
+              <div data-i18n="Layouts">Opportunities</div>
             </li>
           </NavLink>
 
