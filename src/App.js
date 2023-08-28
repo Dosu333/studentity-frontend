@@ -43,7 +43,7 @@ function App() {
   useEffect(()=>{
     console.log(scrollData)
 
-    if (scrollData.y > 500){
+    if (scrollData.y > 200){
       setShowNav(true)
     }else{
       setShowNav(false)
