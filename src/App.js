@@ -17,6 +17,7 @@ import Opportunities from "./pages/opportunities/opportunities";
 import Post from "./pages/opportunities/post";
 import Shoot from "./pages/shootshot/shoot";
 import Pitchdm from "./pages/shootshot/pitchchat";
+import Headroom from "react-headroom";
 
 function App() {
   return (
@@ -44,7 +45,10 @@ function App() {
           </div>{" "}
         </div>
       </div>
-      <Bottomnav />
+      <Headroom>
+        <Bottomnav />
+      </Headroom>
+      
     </Router>
   );
 }

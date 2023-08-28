@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Bottomnav = () => {
+  
   return (
     <>
       <div className="dem bottom-nav">
