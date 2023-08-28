@@ -52,17 +52,17 @@ const Chat = () => {
   return (
     <div
       className="container-xxl flex-grow-1 container-p-y"
-      style={{ overflow: "hidden" }}
+      style={{ overflow: "hidden", height:"100%" }}
     >
        
       
-       <div class="card-body chatB">
+       <div class="card-body chatB" style={{height: "100%"}}>
         <div className="chatInside">
           {/* chats Start  */}
           
           {
             messages.map((message, i) => (
-              <div className={message.sender === "AI" ? "chatLeft" : "chatRight"} style={i===messages.length-1?{marginBottom: "200px"}:null}>
+              <div className={message.sender === "AI" ? "chatLeft" : "chatRight"} style={i===messages.length-1?{marginBottom: "100%"}:null}>
                  {
                   message.sender==="AI"?
                   <div className="image">
