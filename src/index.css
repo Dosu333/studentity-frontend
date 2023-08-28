@@ -38,6 +38,7 @@
   color: var(--bs-body-color);
   text-decoration: none;
   flex: 1 1 auto;
+  font-size: small;
 }
 
 .bnav-item.active {
