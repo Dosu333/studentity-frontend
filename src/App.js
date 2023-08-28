@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -20,15 +20,51 @@ import Pitchdm from "./pages/shootshot/pitchchat";
 import Headroom from "react-headroom";
 
 function App() {
+  const [showNav, setShowNav] = useState()
+  const [scrollData, setScrollData] = useState({
+    y: 0,
+    lastY: 0
+  })
+  
+  useEffect(()=>{
+    const handleScroll = ()=>{
+      setScrollData(prevState=>{
+        return({
+          y: window.scrollY,
+          lastY: prevState.y
+        }
+        )
+      })
+    }
+    
+    window.addEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(()=>{
+    console.log(scrollData)
+
+    if (scrollData.y > 500){
+      setShowNav(true)
+    }else{
+      setShowNav(false)
+    }
+
+    if (scrollData.lastY <= scrollData.y){
+      setShowNav(false)
+    }else{
+      setShowNav(true)
+    }
+  },[scrollData])
+  
   return (
     <Router>
       <div className="layout-container layout-menu-fixed">
         <Sidebar />
         <div className="layout-page">
-          <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme navbar-detached navbar-expand-xl navbar ">
+          <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme  navbar-expand-xl navbar" style={{position: "fixed"}}>
             <Topnav />
           </nav>
-          <div className="content-wrapper">
+          <div className="" style={{marginTop: "20%"}}>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route path="/login" element={<Login />} />
@@ -45,9 +81,11 @@ function App() {
           </div>{" "}
         </div>
       </div>
-      <Headroom>
-        <Bottomnav />
-      </Headroom>
+      <div className={showNav?"bottom-nav hide-bnav":"bottom-nav" }>
+          <Bottomnav />
+      </div>
+        
+
       
     </Router>
   );

@@ -20,6 +20,7 @@
   background-color: #ffffff;
   overflow-x: auto;
   color: indigo;
+  transition: transform 1s ease;
 }
 
 .bnav-inner {
@@ -39,6 +40,10 @@
   text-decoration: none;
   flex: 1 1 auto;
   font-size: small;
+}
+
+.hide-bnav {
+  transform: translateY(100%);
 }
 
 .bnav-item.active {
