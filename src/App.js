@@ -51,9 +51,9 @@ function App() {
 
     useEffect(()=>{
       if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
-         setShowNav(true)
+         setShowNav(false)
       else
-        setShowNav(false)
+        setShowNav(true)
 
     },[scroll.y, scroll.lastY])
 
