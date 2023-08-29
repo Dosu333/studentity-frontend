@@ -1,4 +1,7 @@
+import React from "react";
 import { useParams } from "react-router-dom";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 
 const Post = ()=>{
     let id = useParams().id
@@ -59,7 +62,6 @@ const Post = ()=>{
             </div>
         </article>
         
-        <script src="js/scripts.js"></script>
     </body>
     )
 }

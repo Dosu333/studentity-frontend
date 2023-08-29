@@ -1,11 +1,11 @@
 import "./css/styles.css"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 const Opportunities = ()=>{
     
     const opportunities = [
         {
             id: 0,
-            link: "/post",
+            link: "/opportunities",
             title: "Discover the world of AWS -  Free Online Course",
             post: `Calling all aspiring leaders! 🌍 Applications are now OPEN to join the class of 2024 at African Leadership Academy (ALA). Transform Africa by becoming part of this prestigious educational institution.
 
@@ -22,7 +22,7 @@ const Opportunities = ()=>{
         },
         {
             id: 1,
-            link: "/post",
+            link: "/opportunities",
             title: "APPLICATIONS FOR #YALI 2024 NOW OPEN!!!",
             post: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad quam repellat eos adipisci. Obcaecati aliquid harum commodi ab eius accusantium quisquam, tempore aspernatur praesentium asperiores iure ullam soluta. Vero!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad quam repellat eos adipisci. Obcaecati aliquid harum commodi ab eius accusantium quisquam, tempore aspernatur praesentium asperiores iure ullam soluta. Vero!
@@ -46,13 +46,11 @@ const Opportunities = ()=>{
 
                     {opportunities.map((opportunity, index)=>(
                         <div class="post-preview">
-                        <NavLink to={"/opportunities/"+opportunity.id}>
+                        <Link to={opportunity.link+"/"+opportunity.id}>
                             <h1 class="post-title">{opportunity.title}</h1>
                             <p class="post-subtitle">{opportunity.post.slice(0, 200)+"..."}</p>
-                        </NavLink>
-                        <a href={opportunity.link+ "/"+opportunity.id}>
-                            
-                        </a>
+                        </Link>
+                        
                         <p class="post-meta">
                             Posted by
                             <a style={{padding: "10px"}} href={opportunity["company-link"]}>{opportunity.company}</a>
