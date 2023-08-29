@@ -1,4 +1,5 @@
 import "./css/styles.css"
+import { NavLink } from "react-router-dom"
 const Opportunities = ()=>{
     
     const opportunities = [
@@ -45,9 +46,12 @@ const Opportunities = ()=>{
 
                     {opportunities.map((opportunity, index)=>(
                         <div class="post-preview">
-                        <a href={opportunity.link+ "/"+opportunity.id}>
+                        <NavLink to={"/opportunities/"+opportunity.id}>
                             <h1 class="post-title">{opportunity.title}</h1>
                             <p class="post-subtitle">{opportunity.post.slice(0, 200)+"..."}</p>
+                        </NavLink>
+                        <a href={opportunity.link+ "/"+opportunity.id}>
+                            
                         </a>
                         <p class="post-meta">
                             Posted by

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -17,30 +17,46 @@ import Opportunities from "./pages/opportunities/opportunities";
 import Post from "./pages/opportunities/post";
 import Shoot from "./pages/shootshot/shoot";
 import Pitchdm from "./pages/shootshot/pitchchat";
-import useScrollListener from "./hooks/useScrollListener";
+
 
 function App() {
   const [showNav, setShowNav] = useState(true)
-  const [navClassList, setNavClassList] = useState([]);
-  const scroll = useScrollListener();
+  const wrapper = useRef(null)
+  const [scroll, setScroll] = useState({
+    x: 0,
+    y: 0,
+    lastX: 0,
+    lastY: 0
+  });
+
+ 
+  const handleScroll = () => {
+    setScroll((last) => {
+      return {
+        y: wrapper.current.scrollTop,
+        lastY: last.y
+      };
+    });
+};
 
 
-  useEffect(() => {
-    const _classList = [];
-
-    if (scroll.y > 150 && scroll.y - scroll.lastY > 0){
-      console.log("up")
-      setShowNav(true)
-    }else{
-      console.log("down")
+  const handleTouch = () => {
+    if (showNav===true){
       setShowNav(false)
+    }else{
+      setShowNav(true)
     }
-      // _classList.push("nav-bar--hidden");
+      
+  }
 
-   
+    useEffect(()=>{
+      if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
+         setShowNav(true)
+      else
+        setShowNav(false)
 
-    setNavClassList(_classList);
-  }, [scroll.y, scroll.lastY]);
+    },[scroll.y, scroll.lastY])
+
 
 
   
@@ -49,10 +65,10 @@ function App() {
       <div className="layout-container layout-menu-fixed">
         <Sidebar />
         <div className="layout-page">
-          <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme  navbar-expand-xl navbar" style={{position: "fixed"}}>
+        <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme navbar-detached navbar-expand-xl navbar ">
             <Topnav />
           </nav>
-          <div className="" style={{marginTop: "20%"}}>
+          <div ref={wrapper} className="content-wrapper" style={{marginTop: "20%"}} onScroll={handleScroll} onTouchStart={handleTouch}>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route path="/login" element={<Login />} />
@@ -62,7 +78,7 @@ function App() {
               <Route path="/chat" element={<Chat />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/opportunities" element={<Opportunities/>}/>
-              <Route path="/post/:id" element={<Post />} />
+              <Route path="/opportunities/:id" element={<Post />} />
               <Route path="/shoot" element={<Shoot/>} />
               <Route path="/pitchdm" element={<Pitchdm/>} />
             </Routes>
