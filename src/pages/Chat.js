@@ -97,7 +97,66 @@ const Chat = () => {
         </div>
         
         {/* SendArea  */}
-        
+        <div class=" byr">
+          <div className="add">
+            <button
+              type="button"
+              className="btn btn-icon btn-outline-secondary"
+              style={{ padding: "30px 0" }}
+            >
+              <span class="tf-icons bx bx-dots-vertical-rounded"></span>
+            </button>
+          </div>
+          <div class="input-group input-group-merge ">
+            <textarea
+              placeholder="Send a message"
+              className="form-control txtArea"
+              value={textareaValue}
+              onChange={(e) => setTextareaValue(e.target.value)}
+            ></textarea>
+          </div>
+          <div className="add">
+            <button
+              type="button"
+              class="btn btn-icon btn-primary"
+              style={{ padding: "30px 0" }}
+              onClick={handleSubmit}
+            >
+              <span class={isTyping?"tf-icons bx bx-stop":"tf-icons bx bx-send"} style={{fontSize: '32px'}}></span>
+            </button>
+          </div>
+        </div>
+        {/* sendArea  */}
+        <div class=" byr">
+          <div className="add">
+            <button
+              type="button"
+              className="btn btn-icon btn-outline-secondary"
+              style={{ padding: "30px 0" }}
+            >
+              <span class="tf-icons bx bx-dots-vertical-rounded"></span>
+            </button>
+          </div>
+          <div class="input-group input-group-merge ">
+            <textarea
+              placeholder="Send a message"
+              className="form-control txtArea"
+              value={textareaValue}
+              onChange={(e) => setTextareaValue(e.target.value)}
+            ></textarea>
+          </div>
+          <div className="add">
+            <button
+              type="button"
+              class="btn btn-icon btn-primary"
+              style={{ padding: "30px 0" }}
+              onClick={handleSubmit}
+            >
+              <span class={isTyping?"tf-icons bx bx-stop":"tf-icons bx bx-send"} style={{fontSize: '32px'}}></span>
+            </button>
+          </div>
+        </div>
+        {/* sendArea  */}
       </div>
     </div>
   );

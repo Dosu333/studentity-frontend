@@ -17,45 +17,32 @@ import Opportunities from "./pages/opportunities/opportunities";
 import Post from "./pages/opportunities/post";
 import Shoot from "./pages/shootshot/shoot";
 import Pitchdm from "./pages/shootshot/pitchchat";
-import Headroom from "react-headroom";
+import useScrollListener from "./hooks/useScrollListener";
 
 function App() {
-  const [showNav, setShowNav] = useState()
-  const [scrollData, setScrollData] = useState({
-    y: 0,
-    lastY: 0
-  })
-  
-  useEffect(()=>{
-    const handleScroll = ()=>{
-      setScrollData(prevState=>{
-        return({
-          y: window.scrollY,
-          lastY: prevState.y
-        }
-        )
-      })
-    }
-    
-    window.addEventListener("scroll", handleScroll)
-    // window.addEventListener("touch")
-  }, [])
+  const [showNav, setShowNav] = useState(true)
+  const [navClassList, setNavClassList] = useState([]);
+  const scroll = useScrollListener();
 
-  useEffect(()=>{
-    console.log(scrollData)
 
-    if (scrollData.y < 200){
+  useEffect(() => {
+    const _classList = [];
+
+    if (scroll.y > 150 && scroll.y - scroll.lastY > 0){
+      console.log("up")
       setShowNav(true)
     }else{
+      console.log("down")
       setShowNav(false)
     }
+      // _classList.push("nav-bar--hidden");
 
-    if (scrollData.lastY <= scrollData.y){
-      setShowNav(false)
-    }else{
-      setShowNav(true)
-    }
-  },[scrollData])
+   
+
+    setNavClassList(_classList);
+  }, [scroll.y, scroll.lastY]);
+
+
   
   return (
     <Router>
