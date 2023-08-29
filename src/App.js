@@ -68,7 +68,7 @@ function App() {
         <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme navbar-detached navbar-expand-xl navbar ">
             <Topnav />
           </nav>
-          <div ref={wrapper} className="content-wrapper" style={{marginTop: "20%"}} onScroll={handleScroll} onTouchStart={handleTouch}>
+          <div ref={wrapper} className="content-wrapper"  onScroll={handleScroll} onTouchStart={handleTouch}>
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route path="/login" element={<Login />} />
