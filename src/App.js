@@ -85,7 +85,7 @@ function App() {
           </div>{" "}
         </div>
       </div>
-      <div className={showNav?"bottom-nav":"bottom-nav hide-bnav" }>
+      <div className={showNav?"":"hide-bnav" }>
           <Bottomnav />
       </div>
         

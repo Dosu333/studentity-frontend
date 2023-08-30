@@ -6,7 +6,7 @@ const Bottomnav = () => {
   
   return (
     <>
-      <div className="dem bottom-nav">
+      <div className="dem bottom-nav" style={{height:""}}>
         <div className="bnav-inner">
           <NavLink className="bnav-item" to={"/"}>
             <i className="bnav-icon tf-icons bx bx-layout"></i>
