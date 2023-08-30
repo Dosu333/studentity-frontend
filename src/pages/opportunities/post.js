@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 
 const Post = ()=>{
     let id = useParams().id
-    
+    id = 0
     const opportunities = [
         {
             id: 0,

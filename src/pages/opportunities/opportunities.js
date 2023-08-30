@@ -5,7 +5,7 @@ const Opportunities = ()=>{
     const opportunities = [
         {
             id: 0,
-            link: "/opportunities",
+            link: "/opportunit",
             title: "Discover the world of AWS -  Free Online Course",
             post: `Calling all aspiring leaders! 🌍 Applications are now OPEN to join the class of 2024 at African Leadership Academy (ALA). Transform Africa by becoming part of this prestigious educational institution.
 
@@ -46,7 +46,7 @@ const Opportunities = ()=>{
 
                     {opportunities.map((opportunity, index)=>(
                         <div class="post-preview">
-                        <Link to={opportunity.link+"/"+opportunity.id}>
+                        <Link to={opportunity.link}>
                             <h1 class="post-title">{opportunity.title}</h1>
                             <p class="post-subtitle">{opportunity.post.slice(0, 200)+"..."}</p>
                         </Link>
