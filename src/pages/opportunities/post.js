@@ -6,48 +6,27 @@ const Post = ()=>{
     const [post, setPost] = useState({})
     let id = useParams().id
     const response = ()=>{
-        fetch("https://api.joinstudentity.com/api/v1/opportunity/posts/"+id)
-                    .then((res)=>{
+       
+            fetch("https://api.joinstudentity.com/api/v1/opportunity/posts/"+id)
+            .then((res)=>{
                         return res.json()
-                    })
-                    .then((data)=>{
+                    }
+                )
+            .then((data)=>{
                         setPost(data)
-                    });
+                    }
+                )
+            .catch(err=>{
+
+            });
+
+
     }
 
     useEffect(()=>{
         response()
     },[])
-    const opportunities = [
-        {
-            id: 0,
-            link: "/post",
-            title: "Discover the world of AWS -  Free Online Course",
-            post: `Calling all aspiring leaders! 🌍 Applications are now OPEN to join the class of 2024 at African Leadership Academy (ALA). Transform Africa by becoming part of this prestigious educational institution.
-
-            ⭐️ ALA's mission is to identify, develop, and connect the future leaders of Africa. It's time to unlock your potential and be a catalyst for Africa's development.
-            
-            🎓 ALA believes in equal access to education. Financial assistance is available for all successful applicants, regardless of background or nationality.
-            
-            ✨ Don't miss out on this incredible opportunity to become part of Africa's next generation of leaders.
-            
-            👉 Visit our website to apply or nominate a young leader today: https://rb.gy/m5g87 `,
-            company: "microsoft",
-            "company-link": "microsoft.com",
-            date: "October 24, 2023"
-        },
-        {
-            id: 1,
-            link: "/post",
-            title: "APPLICATIONS FOR #YALI 2024 NOW OPEN!!!",
-            post: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad quam repellat eos adipisci. Obcaecati aliquid harum commodi ab eius accusantium quisquam, tempore aspernatur praesentium asperiores iure ullam soluta. Vero!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad quam repellat eos adipisci. Obcaecati aliquid harum commodi ab eius accusantium quisquam, tempore aspernatur praesentium asperiores iure ullam soluta. Vero!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad quam repellat eos adipisci. Obcaecati aliquid harum commodi ab eius accusantium quisquam, tempore aspernatur praesentium asperiores iure ullam soluta. Vero!`,
-            company: "google",
-            "company-link": "microsoft.com",
-            date: "October 28, 2023"
-        }
-    ]
+    
     return (
         
         <body>

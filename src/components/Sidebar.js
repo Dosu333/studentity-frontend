@@ -10,7 +10,7 @@ const Sidebar = () => {
         className="layout-menu menu-vertical menu bg-menu-theme"
       >
         <div className="app-brand demo">
-          <a href="index.html" className="app-brand-link">
+          <a href="/" className="app-brand-link">
             <span className="app-brand-logo demo">
                <img src={logo} alt="Admin" className="" width="110" />
             </span>
