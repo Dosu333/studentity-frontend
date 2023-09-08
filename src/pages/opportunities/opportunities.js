@@ -6,38 +6,42 @@ const Opportunities =  ()=>{
     const [opportunitiesData, setOpportunitiesData] = useState({})
     const [results, setResults] = useState([])
     const [onlineStatus, setOnlineStatus] = useState(false)
+    const [nextUrl, setNextUrl] = useState("")
+    const [noConnection, setNoConnection] = useState(false)
+    const timeoutDuration = 5000;
+    const initial_url = "https://api.joinstudentity.com/api/v1/opportunity/posts/?page=1&page_size=4";
     
-    const opportunities = ()=>{
-            fetch("https://api.joinstudentity.com/api/v1/opportunity/posts/?page=1&page_size=4")
-                    .then((res)=>{
-                        return res.json()
-                    })
-                    .then((data)=>{
-                        setOpportunitiesData(data)
-                        setResults(data.results)
-                        setOnlineStatus(true)
-                    })
-                    .catch((err)=>{
-                        setOnlineStatus(false)
-                    });
-    }
+    const timer = setTimeout(() => {
+        setNoConnection(true)
+      }, timeoutDuration);
 
-    window.addEventListener("online", function() {
-        console.log("connected")
-      })
-      
-      window.addEventListener("offline", function() {
-        console.log("Disconnected...so sad!!!")
-      })
-    const checkOnlineStatus = () => {
-        //console.log(navigator.onLine)
-        
-    };
+    
+    const opportunities = (url)=>{
+        fetch(url)
+        .then((res)=>{
+            clearTimeout(timer)
+            return res.json()
+        })
+        .then((data)=>{
+            clearTimeout(timer)
+            setOpportunitiesData(data)
+            setNextUrl(data.next)
+            setResults(data.results)
+            setOnlineStatus(true)
+        })
+        .catch((err)=>{
+            console.log(err)
+            setOnlineStatus(false)
+        });
+    }
+    
+    const handleClick = () => {
+        window.location.reload()
+    }
     
     useEffect(()=>{
-        checkOnlineStatus()
-        opportunities()
-    }, [])
+        opportunities(initial_url)
+    }, []);
 
     
 
@@ -50,8 +54,29 @@ const Opportunities =  ()=>{
     <body>
         
         {/* <!-- Main Content--> */}
+        {noConnection&&onlineStatus==false?
+            <div class="container my-5 d-flex justify-content-center">
+                <div class="row  justify-content-center ">
+                    <div class="col">
+                        <div class="card ">
+                            <div class="card-header pb-0 bg-white border-0 text-center px-sm-4"><h6 class="text-left mt-4 font-weight-bold mb-0"><span><i class="fa fa-times-circle fa-2x mr-3 " aria-hidden="true"></i> </span > No internet connection</h6> <span class="img-1 text-center"><img src="https://i.imgur.com/cGXM38s.png" class="img-fluid my-4 " /></span> </div>
+                            <div class="card-body px-sm-4 mb-3">
+                                <ul class="list-unstyled text-muted"> <li>Please re-connect to the internet to continue use Footsteps.</li> <li>If you encounter problems:</li>
+                                    <ul class="mt-2 inner">
+                                        <li>Try restarting wireless connection on this device.</li>
+                                        <li>Move clouse to your wireless access point.</li>
+                                    </ul>    
+                                </ul>
+                                <div class="row justify-content-end mt-4 "> <div class="col-auto"><button type="button" class="btn btn-success" onClick={handleClick}><span >Try Again</span></button></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        :""}
         <div className="container px-4 px-lg-5">
             <div className="row gx-4 gx-lg-5 justify-content-center">
+                {/* check if device is online */}
                 {onlineStatus?
                 <div className="col-md-10 col-lg-8 col-xl-7">
                     {/* <!-- Post preview--> */}
