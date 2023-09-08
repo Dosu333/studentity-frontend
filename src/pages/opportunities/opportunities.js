@@ -58,7 +58,7 @@ const Opportunities =  (props)=>{
     
     useEffect(()=>{
         const height = wrapper.current.clientHeight
-        if ((height-scroll.y)<500){
+        if ((height-scroll.y)<800){
             try {
                 if (opportunitiesData.links.next != null){
                     opportunities(opportunitiesData.links.next)
