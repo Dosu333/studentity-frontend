@@ -88,7 +88,7 @@ const Opportunities =  (props)=>{
                         <div class="card ">
                             <div class="card-header pb-0 bg-white border-0 text-center px-sm-4"><h6 class="text-left mt-4 font-weight-bold mb-0"><span><i class="fa fa-times-circle fa-2x mr-3 " aria-hidden="true"></i> </span > No internet connection</h6> <span class="img-1 text-center"><img src="https://i.imgur.com/cGXM38s.png" class="img-fluid my-4 " /></span> </div>
                             <div class="card-body px-sm-4 mb-3">
-                                <ul class="list-unstyled text-muted"> <li>Please re-connect to the internet to continue use Footsteps.</li> <li>If you encounter problems:</li>
+                                <ul class="list-unstyled text-muted"> <li>Please re-connect to the internet to continue use Studentity.</li> <li>If you encounter problems:</li>
                                     <ul class="mt-2 inner">
                                         <li>Try restarting wireless connection on this device.</li>
                                         <li>Move clouse to your wireless access point.</li>
