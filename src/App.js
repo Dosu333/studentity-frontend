@@ -37,7 +37,7 @@ function App() {
         lastY: last.y
       };
     });
-};
+  };
 
 
   const handleTouch = () => {
@@ -54,7 +54,6 @@ function App() {
          setShowNav(false)
       else
         setShowNav(true)
-
     },[scroll.y, scroll.lastY])
 
 
@@ -77,7 +76,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/opportunities" element={<Opportunities/>}/>
+              <Route path="/opportunities" element={<Opportunities scroll={scroll}/>}/>
               <Route path="/opportunities/:id" element={<Post />} />
               <Route path="/shoot" element={<Shoot/>} />
               <Route path="/pitchdm" element={<Pitchdm/>} />

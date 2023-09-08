@@ -1,15 +1,18 @@
 import "./css/styles.css"
 import "./css/opportunity.css"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
-const Opportunities =  ()=>{
+const Opportunities =  (props)=>{
+    const wrapper = useRef(null)
     const [opportunitiesData, setOpportunitiesData] = useState({})
     const [results, setResults] = useState([])
     const [onlineStatus, setOnlineStatus] = useState(false)
     const [nextUrl, setNextUrl] = useState("")
     const [noConnection, setNoConnection] = useState(false)
+       
+    const scroll = props.scroll
     const timeoutDuration = 5000;
-    const initial_url = "https://api.joinstudentity.com/api/v1/opportunity/posts/?page=1&page_size=4";
+    const initial_url = "https://api.joinstudentity.com/api/v1/opportunity/posts/?page=1&page_size=5";
     
     const timer = setTimeout(() => {
         setNoConnection(true)
@@ -23,10 +26,11 @@ const Opportunities =  ()=>{
             return res.json()
         })
         .then((data)=>{
+            const newResults = data.results
             clearTimeout(timer)
             setOpportunitiesData(data)
             setNextUrl(data.next)
-            setResults(data.results)
+            setResults([...results,...newResults])
             setOnlineStatus(true)
         })
         .catch((err)=>{
@@ -39,10 +43,32 @@ const Opportunities =  ()=>{
         window.location.reload()
     }
     
+    // function handleScroll() {
+    //     if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    //     console.log('Fetch more list items!');
+    // }
+
+    
+
     useEffect(()=>{
         opportunities(initial_url)
     }, []);
 
+    
+    useEffect(()=>{
+        const height = wrapper.current.clientHeight
+        if ((height-scroll.y)<300){
+            try {
+                if (opportunitiesData.links.next != null){
+                    opportunities(opportunitiesData.links.next)
+                }
+                
+            } catch (error) {
+                
+            }
+            
+        }
+    },[scroll])
     
 
     
@@ -55,7 +81,7 @@ const Opportunities =  ()=>{
         
         {/* <!-- Main Content--> */}
         {noConnection&&onlineStatus==false?
-            <div class="container my-5 d-flex justify-content-center">
+            <div class="container my-5 d-flex justify-content-center" >
                 <div class="row  justify-content-center ">
                     <div class="col">
                         <div class="card ">
@@ -74,8 +100,8 @@ const Opportunities =  ()=>{
                 </div>
             </div>
         :""}
-        <div className="container px-4 px-lg-5">
-            <div className="row gx-4 gx-lg-5 justify-content-center">
+        <div ref={wrapper} className="container px-4 px-lg-5">
+            <div className="row gx-4 gx-lg-5 justify-content-center" >
                 {/* check if device is online */}
                 {onlineStatus?
                 <div className="col-md-10 col-lg-8 col-xl-7">
@@ -104,6 +130,7 @@ const Opportunities =  ()=>{
                 <div className="loader"></div>}
             </div>
         </div>
+        
         
         <script src="js/scripts.js"></script>
     </body>
