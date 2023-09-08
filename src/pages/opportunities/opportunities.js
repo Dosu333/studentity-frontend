@@ -52,10 +52,11 @@ const Opportunities =  ()=>{
         {/* <!-- Main Content--> */}
         <div className="container px-4 px-lg-5">
             <div className="row gx-4 gx-lg-5 justify-content-center">
+                {onlineStatus?
                 <div className="col-md-10 col-lg-8 col-xl-7">
                     {/* <!-- Post preview--> */}
 
-                    {onlineStatus===true?results.map((opportunity, index)=>(
+                    {results.map((opportunity, index)=>(
                         <div className="post-preview">
                             <Link to={'/opportunities/'+opportunity.id}>
                                 <h1 className="post-title">{opportunity.title}</h1>
@@ -68,15 +69,14 @@ const Opportunities =  ()=>{
                                 on {opportunity.created_at}
                             </p>
                         </div>
-                    ))
-                    :
-                    <div className="loader"></div>}
+                    ))}
                     
                     {/* <!-- Divider--> */}
                     <hr className="my-4" />
                 
                     {/* <!-- Pager--> */}
-                </div>
+                </div>:
+                <div className="loader"></div>}
             </div>
         </div>
         
