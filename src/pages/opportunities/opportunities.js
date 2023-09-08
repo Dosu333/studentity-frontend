@@ -82,12 +82,14 @@ const Opportunities =  (props)=>{
                     <div class="col">
                         <div class="card ">
                             <div class="card-body px-sm-4 mb-3">
-                                <ul class="list-unstyled text-muted"> <li>Please re-connect to the internet to continue using Studentity.</li> <li>If you encounter problems:</li>
+                                <ul class="list-unstyled text-muted"> <li>To continue using Studentity, please ensure that your internet connection is active.</li> <li>If you encounter any issues, consider the following steps:</li>
                                     <ul class="mt-2 inner">
-                                        <li>Try restarting wireless connection on this device.</li>
-                                        <li>Move close to your wireless access point.</li>
+                                        <li>Restart your device's wireless connection.</li>
+                                        <li>Ensure you are in proximity to your wireless access point.</li>
+                                        <li>If you continue to face connectivity problems, please reach out to our support team for assistance. We're here to help you get back online.</li>
                                     </ul>    
                                 </ul>
+                                
                                 <div class="row justify-content-end mt-4 "> <div class="col-auto"><button type="button" class="btn btn-success" onClick={handleClick}><span >Try Again</span></button></div></div>
                             </div>
                         </div>
@@ -114,13 +116,11 @@ const Opportunities =  (props)=>{
                                 <a style={{padding: "10px"}} href={opportunity["company-link"]}>{opportunity.author}</a>
                                 on {opportunity.created_at}
                             </p>
+                            <hr className="my-4" />
                         </div>
                     ))}
                     
-                    {/* <!-- Divider--> */}
-                    <hr className="my-4" />
-                
-                    {/* <!-- Pager--> */}
+                    <div style={{marginLeft: "30%"}}><div className="loader"></div></div>
                 </div>:
                 <div className="loader"></div>}
             </div>
