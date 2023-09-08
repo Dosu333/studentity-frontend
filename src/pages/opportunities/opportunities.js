@@ -1,11 +1,30 @@
 import "./css/styles.css"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-const Opportunities = ()=>{
+const Opportunities =  ()=>{
+    const [opportunitiesData, setOpportunitiesData] = useState({})
+    const [results, setResults] = useState([])
+    
+    const response = ()=>{
+        fetch("https://api.joinstudentity.com/api/v1/opportunity/posts/?page=1&page_size=4")
+                    .then((res)=>{
+                        return res.json()
+                    })
+                    .then((data)=>{
+                        setOpportunitiesData(data)
+                        setResults(data.results)
+                    });
+    }
+    
+    useEffect(()=>{
+        response()
+    }, [])
+
     
     const opportunities = [
         {
             id: 0,
-            link: "/opportunit",
+            link: "/opportunities",
             title: "Discover the world of AWS -  Free Online Course",
             post: `Calling all aspiring leaders! 🌍 Applications are now OPEN to join the class of 2024 at African Leadership Academy (ALA). Transform Africa by becoming part of this prestigious educational institution.
 
@@ -44,19 +63,19 @@ const Opportunities = ()=>{
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     {/* <!-- Post preview--> */}
 
-                    {opportunities.map((opportunity, index)=>(
+                    {results.map((opportunity, index)=>(
                         <div class="post-preview">
-                        <Link to={opportunity.link}>
-                            <h1 class="post-title">{opportunity.title}</h1>
-                            <p class="post-subtitle">{opportunity.post.slice(0, 200)+"..."}</p>
-                        </Link>
-                        
-                        <p class="post-meta">
-                            Posted by
-                            <a style={{padding: "10px"}} href={opportunity["company-link"]}>{opportunity.company}</a>
-                            on {opportunity.date}
-                        </p>
-                    </div>
+                            <Link to={'/opportunities/'+opportunity.id}>
+                                <h1 class="post-title">{opportunity.title}</h1>
+                                <p class="post-subtitle">{opportunity.body.slice(0, 200)+"..."}</p>
+                            </Link>
+                            
+                            <p class="post-meta">
+                                Posted by
+                                <a style={{padding: "10px"}} href={opportunity["company-link"]}>{opportunity.author}</a>
+                                on {opportunity.created_at}
+                            </p>
+                        </div>
                     ))}
                     
                     {/* <!-- Divider--> */}

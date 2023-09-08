@@ -23,6 +23,14 @@
   transition: transform 1s ease;
 }
 
+.show-nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  transition: transform 1s ease;
+}
+
 .bnav-inner {
   display: flex;
   justify-content: center;

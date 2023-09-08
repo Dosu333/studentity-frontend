@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
 const Post = ()=>{
+    const [post, setPost] = useState({})
     let id = useParams().id
-    id = 0
+    const response = ()=>{
+        fetch("https://api.joinstudentity.com/api/v1/opportunity/posts/"+id)
+                    .then((res)=>{
+                        return res.json()
+                    })
+                    .then((data)=>{
+                        setPost(data)
+                    });
+    }
+
+    useEffect(()=>{
+        response()
+    },[])
     const opportunities = [
         {
             id: 0,
@@ -44,7 +57,7 @@ const Post = ()=>{
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>{opportunities[id].title}</h1>
+                            <h1>{post.title}</h1>
                         </div>
                     </div>
                 </div>
@@ -55,7 +68,7 @@ const Post = ()=>{
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        {opportunities[id].post}
+                        {post.body}
                     </div>
                 </div>
             </div>
