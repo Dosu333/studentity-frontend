@@ -31,7 +31,7 @@ const Post = ()=>{
         
         <body>
         
-        <header class="masthead" style={{backgroundImage: "url(assets/img/post-bg.jpg)"}}>
+        <header class="masthead" style={{backgroundImage: "url(assets/img/post-bg.jpg)", paddingTop: "0%"}}>
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
