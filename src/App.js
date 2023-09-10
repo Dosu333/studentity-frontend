@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import "./assets/vendor/css/core.css"
+import "./assets/vendor/css/theme-default.css"
+import "./assets/css/demo.css"
+import "./assets/vendor/fonts/boxicons.css"
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import FixedBottomNavigation from "./components/navigation";
@@ -61,35 +66,38 @@ function App() {
   
   return (
     <Router>
-      <div className="layout-container layout-menu-fixed">
+      <div class="layout-wrapper layout-content-navbar">
+       <div class="layout-container">
         <Sidebar />
         <div className="layout-page">
         <nav className="layout-navbar top-menu-fixed container-xxl align-items-center bg-navbar-theme navbar-detached navbar-expand-xl navbar ">
             <Topnav />
           </nav>
-          <div ref={wrapper} className="content-wrapper"  onScroll={handleScroll} onTouchStart={handleTouch}>
-            <Routes>
-              <Route exact path="/" element={<Dashboard />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<SignUp />} />
-              <Route path="/reset-password" element={<ForgotPass />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/chat" element={<Chat />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/opportunities" element={<Opportunities scroll={scroll}/>}/>
-              <Route path="/opportunities/:id" element={<Post />} />
-              <Route path="/shoot" element={<Shoot/>} />
-              <Route path="/pitchdm" element={<Pitchdm/>} />
-            </Routes>
-          </div>{" "}
+          <div class="layout-wrapper layout-content-navbar">
+            <div ref={wrapper} className="content-wrapper"  onScroll={handleScroll} onTouchStart={handleTouch}>
+              <Routes>
+                <Route exact path="/" element={<Dashboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<SignUp />} />
+                <Route path="/reset-password" element={<ForgotPass />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/opportunities" element={<Opportunities scroll={scroll}/>}/>
+                <Route path="/opportunities/:id" element={<Post />} />
+                <Route path="/shoot" element={<Shoot/>} />
+                <Route path="/pitchdm" element={<Pitchdm/>} />
+              </Routes>
+            </div>{" "}
+          </div>
         </div>
-      </div>
+      
       <div className={showNav?"show-nav":" show-nav hide-bnav" }>
           <Bottomnav />
+      </div> 
       </div>
-        
-
-      
+      </div>
+   
     </Router>
   );
 }
