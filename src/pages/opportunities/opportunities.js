@@ -124,12 +124,10 @@ const Opportunities =  (props)=>{
                                     </div>
                                     </Link>
                                 ))}
-                                <div style={{marginLeft: "40%"}}><div className="loader"></div></div>
                             </div>
-                            
+                            <div className="loader"></div>  
                             
                         </div>:
-                        
                         <div className="loader"></div>}
                     </div>
 
