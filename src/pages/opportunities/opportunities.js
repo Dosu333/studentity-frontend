@@ -103,8 +103,8 @@ const Opportunities =  (props)=>{
                             {/* <!-- Post preview--> */}
                             <div class="row mb-5">
                                 {results.map((opportunity, index)=>(
-                                    <Link to={'/opportunities/'+opportunity.id}>
-                                    <div class="col-md-6 col-xl-5">
+                                    <Link to={'/opportunities/'+opportunity.id} className="col-md-6 col-xl-5">
+                                    <div class="">
                                         <div class="card mb-3">
                                             <div class="row g-0">
                                                 <div class="col-md-4">
