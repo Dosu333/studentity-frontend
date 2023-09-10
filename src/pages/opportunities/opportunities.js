@@ -97,11 +97,13 @@ const Opportunities =  (props)=>{
             :""}
                 <div ref={wrapper} className="container-xxl flex-grow-1 container-p-y">
                         {/* check if device is online */}
+                        
                         {onlineStatus?
                         <div className="">
                             {/* <!-- Post preview--> */}
                             <div class="row mb-5">
                                 {results.map((opportunity, index)=>(
+                                    <Link to={'/opportunities/'+opportunity.id}>
                                     <div class="col-md-6 col-xl-5">
                                         <div class="card mb-3">
                                             <div class="row g-0">
@@ -120,6 +122,7 @@ const Opportunities =  (props)=>{
                                             </div>
                                         </div>
                                     </div>
+                                    </Link>
                                 ))}
                             </div>
                             
