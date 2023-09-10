@@ -50,6 +50,7 @@ const Opportunities =  (props)=>{
         opportunities(initial_url)
     }, []);
 
+    console.log(results)
     
     useEffect(()=>{
         const height = wrapper.current.clientHeight
@@ -116,7 +117,9 @@ const Opportunities =  (props)=>{
                                                             <p class="card-text">
                                                             {opportunity.body.slice(0,200)+"..."}
                                                             </p>
-                                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                        <p class="card-text"><small class="text-muted">Posted by
+                                                        <a style={{padding: "10px", fontWeight: "bold"}} href={opportunity["company-link"]}>{opportunity.author}</a>
+                                                        on {opportunity.created_at}</small></p>
                                                     </div>
                                                 </div>
                                             </div>
