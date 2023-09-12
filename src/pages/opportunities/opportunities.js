@@ -101,53 +101,27 @@ const Opportunities =  (props)=>{
                         {onlineStatus?
                         <div className="">
                             {/* <!-- Post preview--> */}
-                            <div class="row mb-5">
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
                                 {results.map((opportunity, index)=>(
-                                    index%2==0?<Link to={'/opportunities/'+opportunity.id} className="col-md-6 col-xl-5">
-                                        <div class="">
-                                            <div class="card mb-3">
-                                                <div class="row g-0">
-                                                    <div class="col-md-4">
-                                                        <img class="card-img card-img-left" style={{height: "100%"}} src={placeholder_image_left} alt="Card image" />
-                                                    </div>
-                                                    <div class="col-md-8">
-                                                        <div class="card-body" style={{height: "200px"}}>
-                                                            <h5 class="card-title">{opportunity.title}</h5>
-                                                                <p class="card-text">
-                                                                {opportunity.body.slice(0,20)+"..."}
-                                                                </p>
-                                                            <p class="card-text"><small class="text-muted">Posted by
-                                                            <a style={{padding: "10px", fontWeight: "bold"}} href={opportunity["company-link"]}>{opportunity.author}</a>
-                                                            on {opportunity.created_at}</small></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Link>:
                                     <Link to={'/opportunities/'+opportunity.id} className="col-md-6 col-xl-5">
-                                        <div class="card mb-3">
-                                            <div class="row g-0">
-                                            <div class="col-md-8">
-                                                <div class="card-body" style={{height:"200px"}}>
+                                         <div class="col">
+                                            <div class="card h-100">
+                                                <img class="card-img-top" src={placeholder_image_left} alt="Card image cap" />
+                                                <div class="card-body">
                                                 <h5 class="card-title">{opportunity.title}</h5>
                                                 <p class="card-text">
-                                                    {opportunity.body.slice(0,20)+"..."}
+                                                    {opportunity.body.slice(0,200)+'...'}
                                                 </p>
                                                 <p class="card-text"><small class="text-muted">Posted by
                                                             <a style={{padding: "10px", fontWeight: "bold"}} href={opportunity["company-link"]}>{opportunity.author}</a>
                                                             on {opportunity.created_at}</small></p>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <img class="card-img card-img-right" style={{height: "100%"}} src={placeholder_image_right} alt="Card image" />
-                                            </div>
-                                            </div>
                                         </div>
                                     </Link>
                                 ))}
                             </div>
-                            <div className="loader"></div>  
+                            <div className="loader" style={{marginLeft: "40%"}}></div>  
                             
                         </div>:
                         <div className="loader"></div>}

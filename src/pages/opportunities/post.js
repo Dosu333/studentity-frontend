@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import placeholder_image_left from "../../assets/img/elements/12.jpg"
+import avatar from "../../assets/img/avatars/1.png"
 
 
 const Post = ()=>{
@@ -30,30 +32,32 @@ const Post = ()=>{
     return (
         
         <body>
-        
-        <header class="masthead" style={{backgroundImage: "url(assets/img/post-bg.jpg)", paddingTop: "0%"}}>
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="post-heading">
-                            <h1>{post.title}</h1>
+            <div class="container-xxl" style={{marginTop: "5%"}}>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src={placeholder_image_left} style={{height: "150px"}} alt="Card image cap" />
+                    <div class="card-body">
+                      <h2 class="d-flex card-title justify-content-left">{post.title}</h2>
+                      <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar" style={{marginTop: "5%"}}>
+                              <img src={avatar} alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">{post.author}</span>
+                            <small class="text-muted">{post.created_at}</small>
+                          </div>
                         </div>
+                      <p class="card-text" style={{marginTop: "10%"}}>
+                            {post.body}
+                      </p>
                     </div>
+                  </div>
                 </div>
             </div>
-        </header>
-
-        <article class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        {post.body}
-                    </div>
-                </div>
-            </div>
-        </article>
         
-    </body>
+        </body>
     )
 }
 
