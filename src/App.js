@@ -5,6 +5,7 @@ import "./assets/vendor/css/core.css"
 import "./assets/vendor/css/theme-default.css"
 import "./assets/css/demo.css"
 import "./assets/vendor/fonts/boxicons.css"
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js"
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 

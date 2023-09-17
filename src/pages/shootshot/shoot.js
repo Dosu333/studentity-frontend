@@ -4,206 +4,143 @@ import avatar from "../../components/7.png";
 import avatar2 from "../../components/6.png";
 import Typing from "../../components/Typing";
 
-
-
 const Shoot = () => {
-    const messagesEndRef = useRef(null);
-    const [isTyping, setIsTyping] = useState(false);
-    const [textareaValue, setTextareaValue] = useState('');
-    const [messages, setMessage] = useState([
-      {
-        message: "Hello there",
-        sender: "AI"
-      }
-    ])
-  
-    const scrollToBottom = () => {
-      // messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    };
-  
-    useEffect(scrollToBottom, [messages]);
-    
-    
-    function handleSubmit(){
-      if (isTyping || textareaValue===""){
-        return
-      }
-      scrollToBottom()
-      console.log(textareaValue)
-      messages.push(
-        {
-          message: textareaValue,
-          sender: "user"
-        }
-      )
-      setMessage(messages)
-      getAIresponse()
-      setTextareaValue("")
-  
-    }
-  
-    function getAIresponse(){
-      setIsTyping(true)
-      messages.push({
-        message: "AI response",
-        sender: "AI"
-      })
-      setMessage(messages)
-      
-  
-    }
-    
+  const [message, setMessage] = useState("hello");
+  const companies = [
+    { id: 1, link: "#list-home", name: "Google" },
+    { id: 2, link: "#list-profile", name: "Facebook" },
+    { id: 3, link: "#list-messages", name: "Amazon" },
+  ];
 
-    return (
-        <body>
-    <div class="container-fluid"  style={{height:"100%"}}>
-        <div class="row" style={{height:"100%"}}>
-            <div class="col-lg-4 col-xl-4">
-                <div class="row" >
-                    
-                </div>
-                <div class="col d-flex flex-nowrap justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center py-2" style={{backgroundColor: "white",height: "4rem", marginLeft: "1.5rem"}}>
-                        <h4 class="mr-auto my-auto align-items-center">Shoot your shot</h4><button class="btn shadow-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem;"}}></button>
-                    </div>
-                <div class="row px-3 py-2">
-                    <div class="col" style={{borderRadius: "25px",boxShadow: "0px 0px 5px var(--gray-dark)"}}>
-                        <form class="d-flex align-items-center px-2"><i class="bx bx-search"></i><input class="shadow-none form-control flex-shrink-1" type="search" placeholder="Search companies" style={{borderRadius: "13px", borderStyle: "none"}}></input></form>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col" style={{overflowX: "none",overflowY: "auto", maxHeight: "32.5rem", height: "auto"}}>
-                        <ul class="list-unstyled">
-                            <li style={{cursor:"pointer"}}>
-                              <a href="/pitchdm">
-                                <div class="card border-0">
-                                    <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem",borderRadius: "15px",backgroundColor: "#00db5f"}}>1</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Microsoft</h4>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
-                                    </div>
-                                </div>
-                              </a>
-                            </li>
-                            <li style={{cursor:"pointer"}}>
-                            <a href="/pitchdm">
-                                <div class="card border-0">
-                                    <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem",borderRadius: "15px",backgroundColor: "#00db5f"}}>1</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Google</h4>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Boke, GB, Boke!</h6>
-                                    </div>
-                                </div>
-                            </a>
-                            </li>
-                            <li style={{cursor:"pointer"}}>
-                                <div class="card border-0">
-                                    <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem",height: "2rem", borderRadius: "15px",background: "#00db5f"}}>10</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Facebook</h4>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style={{cursor:"pointer"}}>
-                                <div class="card border-0">
-                                    <div class="card-body"><span class="text-nowrap text-truncate text-uppercase text-white float-end p-1 text-center" style={{width: "2rem", height: "2rem",borderRadius: "15px",background: "#00db5f"}}>5</span>
-                                        <h4 class="text-nowrap text-truncate card-title">Amazon</h4>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2" style={{fontSize: ".7rem"}}>19 de Julio de 2021, 11:53 AM</h6>
-                                        <h6 class="text-nowrap text-truncate text-muted card-subtitle mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse blandit sit amet dolor eu dignissim.</h6>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-none d-sm-none d-md-none d-lg-block d-xl-block">
-                
-            <div class="row px-3 py-2 border-start border-muted" style={{height:"100%"}}>
-                <div class="row">
-                        <div class="col d-flex align-items-lg-center align-items-xl-center border-start border-muted" style={{backgroundColor: "rgba(52,58,64,0.2)",height: "4rem"}}><button class="btn d-block d-sm-block d-md-block d-lg-none d-xl-none border-0 my-auto" type="button" style={{width: "2.5rem",height: "2.5rem"}}><i class="far fa-arrow-alt-circle-left"></i></button>
-                            <h5 class="mr-auto my-auto">Google</h5><span class="my-auto"><i class="fas fa-info-circle"></i></span>
-                        </div>
-                    <div class="card-body chatB" style={{height:"100%"}}>
-        <div className="chatInside">
-          {/* chats Start  */}
-          
-          {
-            messages.map((message, i) => (
-              <div className={message.sender === "AI" ? "chatLeft" : "chatRight"} style={i===messages.length-1?{marginBottom: "200px"}:null}>
-                 {
-                  message.sender==="AI"?
-                  <div className="image">
-                  <img src={avatar2} alt="" className="img-avatar" />
-                  </div>:null
-                 }
-                  
-                <div className={message.sender === "AI" ? "aBody" : "uBody"}>
-                  <div className={message.sender === "AI" ? "aContent" : "uContent"}>
-                    <div> { isTyping && i === messages.length - 1 && message.sender==="AI" ? <Typing /> : message.message } </div>                  
-                  </div>
-                  <small className={message.sender==="AI"?"chat-date": "uchat-date"}>
-                    <i className={message.sender==="AI" ? "tf-icons bx bx-calendar":" bx bx-calendar"}></i> 22-07-2023 at 09:00
-                  </small>
-                </div>
-                
-                 {
-                  message.sender === "user" ?
-                 <div className="image">
-                    <img src={avatar} alt="" className="img-avatar" />
-                  </div>: null
+  const handleTextareaChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  return (
+    <body>
+      <small class="text-light fw-semibold">Vertical</small>
+      <div class="mt-3">
+        <div class="navbar-nav ">
+          <div class="nav-item d-flex align-items-center">
+            <i class="bx bx-search fs-4 lh-0"></i>
+            <input
+              type="text"
+              class="form-control border-0 shadow-none"
+              placeholder="Search..."
+              aria-label="Search..."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-12 mb-3 mb-md-0">
+            <div class="list-group">
+              {companies.map((company, index) => (
+                <a
+                  class={
+                    index == 0
+                      ? "list-group-item list-group-item-action active"
+                      : "list-group-item list-group-item-action"
                   }
-                
-
-              </div>
-            ))
-          }
-          <div ref={messagesEndRef}/>
-          <div  />
-          
-          {/* chats End */}
-        </div>
-        
-        {/* SendArea  */}
-        <div class=" byr">
-          <div className="add">
-            <button
-              type="button"
-              className="btn btn-icon btn-outline-secondary"
-              style={{ padding: "30px 0" }}
-            >
-              <span class="tf-icons bx bx-dots-vertical-rounded"></span>
-            </button>
-          </div>
-          <div class="input-group input-group-merge ">
-            <textarea
-              placeholder="Send a message"
-              className="form-control txtArea"
-              value={textareaValue}
-              onChange={(e) => setTextareaValue(e.target.value)}
-            ></textarea>
-          </div>
-          <div className="add">
-            <button
-              type="button"
-              class="btn btn-icon btn-primary"
-              style={{ padding: "30px 0" }}
-              onClick={handleSubmit}
-            >
-              <span class={isTyping?"tf-icons bx bx-stop":"tf-icons bx bx-send"} style={{fontSize: '32px'}}></span>
-            </button>
-          </div>
-        </div>
-        {/* sendArea  */}
-      </div>
-            
-                    </div>
-                </div>
+                  id="list-home-list"
+                  data-bs-toggle="list"
+                  href={company.link}
+                >
+                  {company.name}
+                </a>
+              ))}
             </div>
+          </div>
+          <div class="col-md-8 col-12">
+            <div class="tab-content p-0">
+              <div class="tab-pane fade show active" id="list-home">
+                <div className="container-xxl flex-grow-1 container-p-y">
+                  <div class="card-body chatB">
+                    <div className="chatInside" style={{ height: "100%" }}>
+                      <div className="chatLeft">
+                        <div className="image">
+                          <img src={avatar2} alt="" className="img-avatar" />
+                        </div>
+                        <div className="aBody">
+                          <div className="aContent">
+                            <div> Hello World </div>
+                          </div>
+                          <small className="chat-date">
+                            <i className="tf-icons bx bx-calendar"></i>{" "}
+                            22-07-2023 at 09:00
+                          </small>
+                        </div>
+                      </div>
+
+                      <div className="chatRight">
+                        <div className="uBody">
+                          <div className="uContent">
+                            <div> How are you</div>
+                          </div>
+                          <small className="uchat-date">
+                            <i className=" bx bx-calendar"></i> 22-07-2023 at
+                            09:00
+                          </small>
+                        </div>
+
+                        <div className="image">
+                          <img src={avatar} alt="" className="img-avatar" />
+                        </div>
+                      </div>
+                      <div className="chatRight">
+                        <div className="uBody">
+                          <div className="uContent">
+                            <div> How are you</div>
+                          </div>
+                          <small className="uchat-date">
+                            <i className=" bx bx-calendar"></i> 22-07-2023 at
+                            09:00
+                          </small>
+                        </div>
+
+                        <div className="image">
+                          <img src={avatar} alt="" className="img-avatar" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="list-profile">
+                Muffin lemon drops chocolate chupa chups jelly beans dessert
+                jelly-o. Soufflé gummies gummies. Ice cream powder marshmallow
+                cotton candy oat cake wafer. Marshmallow gingerbread tootsie
+                roll. Chocolate cake bonbon jelly beans lollipop jelly beans
+                halvah marzipan danish pie. Oat cake chocolate cake pudding bear
+                claw liquorice gingerbread icing sugar plum brownie. Toffee
+                cookie apple pie cheesecake bear claw sugar plum wafer gummi
+                bears fruitcake.
+              </div>
+              <div class="tab-pane fade" id="list-messages">
+                Ice cream dessert candy sugar plum croissant cupcake tart pie
+                apple pie. Pastry chocolate chupa chups tiramisu. Tiramisu
+                cookie oat cake. Pudding brownie bonbon. Pie carrot cake
+                chocolate macaroon. Halvah jelly jelly beans cake macaroon
+                jelly-o. Danish pastry dessert gingerbread powder halvah. Muffin
+                bonbon fruitcake dragée sweet sesame snaps oat cake marshmallow
+                cheesecake. Cupcake donut sweet bonbon cheesecake soufflé
+                chocolate bar.
+              </div>
+              <div class="tab-pane fade" id="list-settings">
+                Marzipan cake oat cake. Marshmallow pie chocolate. Liquorice oat
+                cake donut halvah jelly-o. Jelly-o muffin macaroon cake
+                gingerbread candy cupcake. Cake lollipop lollipop jelly brownie
+                cake topping chocolate. Pie oat cake jelly. Lemon drops halvah
+                jelly cookie bonbon cake cupcake ice cream. Donut tart bonbon
+                sweet roll soufflé gummies biscuit. Wafer toffee topping jelly
+                beans icing pie apple pie toffee pudding. Tiramisu powder
+                macaroon tiramisu cake halvah.
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</body>
-    );
+      </div>
+    </body>
+  );
 };
 
 export default Shoot;
