@@ -23,7 +23,7 @@
   transition: transform 1s ease;
 }
 
-.show-nav{
+.show-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
